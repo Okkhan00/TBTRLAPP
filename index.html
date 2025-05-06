@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Agency Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Travel Agency Management</h1>
+
+  <div class="tabs">
+    <button onclick="showTab('customer')">Customer Data</button>
+    <button onclick="showTab('office')">Office Data</button>
+    <button onclick="showTab('agent')">Agent B2B</button>
+  </div>
+
+  <div id="customer" class="tab-content">
+    <h2>Customer Data</h2>
+    <form onsubmit="saveCustomer(event)">
+      <input placeholder="Name" id="cName" required />
+      <input placeholder="Ticket Number" id="cTicket" required />
+      <input placeholder="Payment" id="cPayment" required />
+      <input placeholder="Address" id="cAddress" required />
+      <input placeholder="Phone" id="cPhone" required />
+      <button type="submit">Save</button>
+    </form>
+    <ul id="customerList"></ul>
+  </div>
+
+  <div id="office" class="tab-content">
+    <h2>Office Data</h2>
+    <form onsubmit="saveOffice(event)">
+      <input placeholder="Expense Title" id="oTitle" required />
+      <input placeholder="Amount" id="oAmount" required />
+      <input type="date" id="oDate" required />
+      <button type="submit">Save</button>
+    </form>
+    <ul id="officeList"></ul>
+  </div>
+
+  <div id="agent" class="tab-content">
+    <h2>Agent (B2B)</h2>
+    <form onsubmit="saveAgent(event)">
+      <input placeholder="Agent Name" id="aName" required />
+      <input placeholder="Ticket Number" id="aTicket" required />
+      <input placeholder="Payment" id="aPayment" required />
+      <button type="submit">Save</button>
+    </form>
+    <ul id="agentList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
